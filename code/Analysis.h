@@ -3,8 +3,9 @@
 * \file Analysis.h
 * \brief Spectral Analysis
 *
-* Spectral analysis include functions: DFT, IDFT,
- * noise estimation, spectral subtraction and Wiener filter
+* Spectral analysis include functions: DFT, IDFT. Significant
+ * components such as the power spectrum and the phase of signal are
+ * obtained.
 *
 */
 #ifndef CSC3002_Analysis_H
@@ -15,6 +16,9 @@
 #include <math.h>
 
 
+/// \brief Spectral Analysis
+///
+/// Base class of the Enhancement
 class Analysis {
 public:
 
@@ -27,7 +31,7 @@ public:
     int nFFT;                ///< nearest power of 2 to frame length
     int nFFT2;               ///< half of nFFT
     int numFrms;             ///< number of frames
-
+    int newWaveLen;          ///< length of new wave
     int samp_rate;           ///< sampling rate
     int sam_period;          ///< sampling period
 
@@ -37,20 +41,19 @@ public:
     float *im;               ///< imaginary part
     float *phase;            ///< phase
     float *power;            ///< power of speech
-    float *newWave;          /// new speech wave for output
+    float *newWave;          ///< new speech wave for output
 
-    float *estimate_head;    /// noise estimation (head)
-    float *estimate_tail;    /// noise estimation (tail)
-    float *estimate_avg;     /// average noise estimation
+    float *estimate_head;    ///< noise estimation (head)
+    float *estimate_tail;    ///< noise estimation (tail)
+    float *estimate_avg;     ///< average noise estimation
 
-    float **im_array;        /// imaginary part 2-D array
-    float **re_array;        /// real part 2-D array
-    float **pha_array;       /// phase 2-D array
-    float **power_array;     /// power spectrum 2-D array
-    float **estimate_recursion; /// recursive noise estimation 2-D array
-    float **wave;            /// wave after IDFT 2-D array
+    float **im_array;        ///< imaginary part 2-D array
+    float **re_array;        ///< real part 2-D array
+    float **pha_array;       ///< phase 2-D array
+    float **power_array;     ///< power spectrum 2-D array
+    float **estimate_recursion; ///< recursive noise estimation 2-D array
+    float **wave;            ///< wave after IDFT 2-D array
 
-	float* temp;
 
     /// Perform spectral analysis
     ///
@@ -94,18 +97,7 @@ public:
 
     /// Array initialization
     ///
-    /// \param twavData Wav data
     void initArray();
-
-    /// Noise estimation
-    ///
-    /// \param twavData Wav data
-    void noiseEstimation(int i,int j);
-
-    /// Recursive noise estimation
-    ///
-    /// \param a smoothing factor
-    void recursiveNoiseEstimation(float a);
 
     /// Inverse Discrete Fourier Transform
     ///
@@ -118,30 +110,11 @@ public:
     ///
     void runIDFT();
 
-    /// Spectral subtraction
-    ///
-    /// Subtract power spectrum of speech signal and estimated noise
-    void spectrualSubtraction();
-
     /// Overlap half-add
     /// Half overlap addition to generate WAV signal
     void halfAdd();
 
-    /// Wiener filter
-    ///
-    /// \param alpha smoothing factor alpha
-    /// \param beta  smoothing factor beta
-    void wienerFilter(float alpha,float beta);
 
-    /// Perform Wiener filter with default parameters
-    ///
-    void runWiener();
-
-    /// Perform Wiener filter with input parameters
-    ///
-    /// \param alpha smoothing factor alpha
-    /// \param beta  smoothing factor beta
-    void runWiener(float alpha,float beta);
 
 };
 

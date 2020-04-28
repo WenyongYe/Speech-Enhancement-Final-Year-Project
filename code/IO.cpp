@@ -1,52 +1,62 @@
 #include "IO.h"
 
-
-IO::IO(){
-    twavData=new TWAVData;
+//constructor
+IO::IO() {
+    twavData = new TWAVData;
 }
 
+//destructor
 IO::~IO() {
-    if(twavData)
-    delete twavData;
+    if (twavData)
+        delete twavData;
 }
 
-void IO::Input(){
-    cout<<"Input function running..."<<endl;
-    cout<<"Type the name of input WAV file: ";
+//input function
+void IO::Input() {
+    cout << endl << "Input function running..." << endl;
+    cout << "Type the name of input WAV file: ";
 
-    string input;
-    cin>>input;
-    char* s=&input[0];
+    input = new char[1024];
+    cin >> input;
 
-    bool success= false;
+
+    //if not successfully loading
+    bool success = false;
     do {
-        success= twavData->load(s);
+        success = twavData->load(input);
         if (success)
             cout << endl << "Successfully loading WAV file..." << endl;
         else {
             cout << endl << "Fail to load WAV file..." << endl;
             cout << "Try again..." << endl;
-            cout<<"Type the name of input WAV file: ";
-            cin>>input;
-            char* s=&input[0];
-            success = twavData->load(s);
+            cout << "Type the name of input WAV file: ";
+            cin >> input;
+
+            success = twavData->load(input);
         }
-    }while(!success);
+    } while (!success);
+    delete[] input;
 }
 
-void IO::Output(){
-    cout<<"Output function running..."<<endl;
-    cout<<"Type the name of output WAV file: ";
-    string output;
-    cin>>output;
-    char* s=&output[0];
+//output function
+void IO::Output() {
+    cout << endl << "Output function running..." << endl;
+    cout << "Type the name of output WAV file: ";
+    output = new char[1024];
+    cin >> output;
 
-    twavData->write(s);
-    cout<<endl<<"Successfully output WAV file"<<endl;
+    twavData->write(output);
+    cout << endl << "Successfully output WAV file" << endl;
+    delete[] output;
 }
 
-void IO::ReplaceWave(TWAVData *twavData,float *&wave) {
+//replace the original wave signal
+void IO::ReplaceWave(TWAVData*& twavData, float*& wave, int newLength) {
 
-    for(int i=0;i< twavData->nSamples;i++)
-        twavData->Sample[i]=(short)wave[i];
+    for (int i = 0; i < twavData->nSamples; i++)
+        if (i < newLength)
+            twavData->Sample[i] = (short)wave[i];
+        else
+            twavData->Sample[i] = 0;
+
 }

@@ -1,0 +1,95 @@
+.TH "RunMenu" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RunMenu \- Operations from menu\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RunMenu\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRunMenu\fP ()"
+.br
+.RI "constructor "
+.ti -1c
+.RI "\fB~RunMenu\fP ()"
+.br
+.RI "destructor "
+.ti -1c
+.RI "void \fBtestIO\fP ()"
+.br
+.ti -1c
+.RI "void \fBtestIDFT\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddNoise2Speech\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddGaussianNoise2Speech\fP ()"
+.br
+.ti -1c
+.RI "void \fBspectralSubtract\fP ()"
+.br
+.ti -1c
+.RI "void \fBwienerFilter\fP ()"
+.br
+.ti -1c
+.RI "void \fBevaluation\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBCheckData\fP * \fBcheckData\fP"
+.br
+.RI "\fBCheckData\fP class\&. "
+.ti -1c
+.RI "\fBIO\fP * \fBio\fP"
+.br
+.RI "\fBIO\fP class\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Operations from menu\&. 
+
+Perform operations selected from the menu in main\&.cpp 
+.SH "Member Function Documentation"
+.PP 
+.SS "void RunMenu::addGaussianNoise2Speech ()"
+Test IDFT
+.PP
+Input speech WAV file to obtain power spectrum and phase, apply IDFT to restore WAV file 
+.SS "void RunMenu::addNoise2Speech ()"
+Add noise to speech
+.PP
+Add noise from WAV file to another WAV file given SNR 
+.SS "void RunMenu::evaluation ()"
+\fBEvaluation\fP
+.PP
+Segmental SNR implemented for objective quality measures 
+.SS "void RunMenu::spectralSubtract ()"
+Spectral subtraction
+.PP
+Apply recursive noise estimation and perform spectral subtraction for speech enhancement 
+.SS "void RunMenu::testIDFT ()"
+Test IDFT
+.PP
+Input speech WAV file to obtain power spectrum and phase, apply IDFT to restore WAV file 
+.SS "void RunMenu::testIO ()"
+Test \fBIO\fP function
+.PP
+Input speech WAV file, output the same WAV file 
+.SS "void RunMenu::wienerFilter ()"
+Wiener filter
+.PP
+Apply Wiener filter for speech enhancement 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,92 @@
+.TH "TRIFF" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TRIFF
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBRead\fP (ifstream *inf)"
+.br
+.ti -1c
+.RI "void \fBWrite\fP (ofstream *of)"
+.br
+.ti -1c
+.RI "void \fBCompose\fP (unsigned int nSamples, int rate, int bytes_per_samp)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   char \fBID\fP [4]"
+.br
+.ti -1c
+.RI "   int \fBLen\fP"
+.br
+.ti -1c
+.RI "} \fBRiff_Hdr\fP"
+.br
+.ti -1c
+.RI "char \fBWave_ID\fP [4]"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   char \fBID\fP [4]"
+.br
+.ti -1c
+.RI "   unsigned int \fBLen\fP"
+.br
+.ti -1c
+.RI "} \fBFormat_Hdr\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   short int \fBFormatTag\fP"
+.br
+.ti -1c
+.RI "   short int \fBChannels\fP"
+.br
+.ti -1c
+.RI "   int \fBRate\fP"
+.br
+.ti -1c
+.RI "   int \fBBytesPerSec\fP"
+.br
+.ti -1c
+.RI "   short int \fBBytesPerSam\fP"
+.br
+.ti -1c
+.RI "   short int \fBBitsPerSam\fP"
+.br
+.ti -1c
+.RI "} \fBFmt_Chunk\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   char \fBID\fP [4]"
+.br
+.ti -1c
+.RI "   unsigned int \fBLen\fP"
+.br
+.ti -1c
+.RI "} \fBData_Hdr\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,266 @@
+.TH "Analysis" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Analysis \- Spectral \fBAnalysis\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Analysis\&.h>\fP
+.PP
+Inherited by \fBEnhancement\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnalysis\fP (int i)"
+.br
+.RI "constructor with sampling period "
+.ti -1c
+.RI "\fB~Analysis\fP ()"
+.br
+.RI "destructor "
+.ti -1c
+.RI "void \fBrunAnalysis\fP (\fBTWAVData\fP *twavData)"
+.br
+.ti -1c
+.RI "void \fBPha\fP (float *\fBre\fP, float *\fBim\fP, float *&p)"
+.br
+.ti -1c
+.RI "int \fBsetnFFT\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBDFT\fP (float *\fBx\fP, float *&\fBre\fP, float *&\fBim\fP)"
+.br
+.ti -1c
+.RI "void \fBpSpectrum\fP (float *\fBre\fP, float *\fBim\fP, float *&p)"
+.br
+.ti -1c
+.RI "void \fBframeLen\fP (\fBTWAVData\fP *twavData)"
+.br
+.ti -1c
+.RI "void \fBinitArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBIDFT\fP (float *a, float *p, float *&\fBx\fP)"
+.br
+.ti -1c
+.RI "void \fBrunIDFT\fP ()"
+.br
+.ti -1c
+.RI "void \fBhalfAdd\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBPI\fP =3\&.1416"
+.br
+.RI "pi "
+.ti -1c
+.RI "int \fBfrmLen\fP"
+.br
+.RI "frame length "
+.ti -1c
+.RI "int \fBfrmShift\fP"
+.br
+.RI "frame shift "
+.ti -1c
+.RI "int \fBnFFT\fP"
+.br
+.RI "nearest power of 2 to frame length "
+.ti -1c
+.RI "int \fBnFFT2\fP"
+.br
+.RI "half of nFFT "
+.ti -1c
+.RI "int \fBnumFrms\fP"
+.br
+.RI "number of frames "
+.ti -1c
+.RI "int \fBnewWaveLen\fP"
+.br
+.RI "length of new wave "
+.ti -1c
+.RI "int \fBsamp_rate\fP"
+.br
+.RI "sampling rate "
+.ti -1c
+.RI "int \fBsam_period\fP"
+.br
+.RI "sampling period "
+.ti -1c
+.RI "float * \fBw\fP"
+.br
+.RI "speech wave "
+.ti -1c
+.RI "float * \fBx\fP"
+.br
+.RI "frequency "
+.ti -1c
+.RI "float * \fBre\fP"
+.br
+.RI "real part "
+.ti -1c
+.RI "float * \fBim\fP"
+.br
+.RI "imaginary part "
+.ti -1c
+.RI "float * \fBphase\fP"
+.br
+.RI "phase "
+.ti -1c
+.RI "float * \fBpower\fP"
+.br
+.RI "power of speech "
+.ti -1c
+.RI "float * \fBnewWave\fP"
+.br
+.RI "new speech wave for output "
+.ti -1c
+.RI "float * \fBestimate_head\fP"
+.br
+.RI "noise estimation (head) "
+.ti -1c
+.RI "float * \fBestimate_tail\fP"
+.br
+.RI "noise estimation (tail) "
+.ti -1c
+.RI "float * \fBestimate_avg\fP"
+.br
+.RI "average noise estimation "
+.ti -1c
+.RI "float ** \fBim_array\fP"
+.br
+.RI "imaginary part 2-D array "
+.ti -1c
+.RI "float ** \fBre_array\fP"
+.br
+.RI "real part 2-D array "
+.ti -1c
+.RI "float ** \fBpha_array\fP"
+.br
+.RI "phase 2-D array "
+.ti -1c
+.RI "float ** \fBpower_array\fP"
+.br
+.RI "power spectrum 2-D array "
+.ti -1c
+.RI "float ** \fBestimate_recursion\fP"
+.br
+.RI "recursive noise estimation 2-D array "
+.ti -1c
+.RI "float ** \fBwave\fP"
+.br
+.RI "wave after IDFT 2-D array "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Spectral \fBAnalysis\fP\&. 
+
+Base class of the \fBEnhancement\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Analysis::DFT (float * x, float *& re, float *& im)"
+Discrete Fourier transform
+.PP
+Apply DFT on speech to obtain real and imaginary part 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP speech sample 
+.br
+\fIre\fP real part 
+.br
+\fIim\fP imaginary part 
+.RE
+.PP
+
+.SS "void Analysis::frameLen (\fBTWAVData\fP * twavData)"
+Calculate total frame length
+.PP
+\fBParameters\fP
+.RS 4
+\fItwavData\fP Wav data 
+.RE
+.PP
+
+.SS "void Analysis::halfAdd ()"
+Overlap half-add Half overlap addition to generate WAV signal 
+.SS "void Analysis::IDFT (float * a, float * p, float *& x)"
+Inverse Discrete Fourier Transform
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP magnitude 
+.br
+\fIp\fP power spectrum 
+.br
+\fIx\fP return WAV 
+.RE
+.PP
+
+.SS "void Analysis::initArray ()"
+Array initialization 
+.SS "void Analysis::Pha (float * re, float * im, float *& p)"
+Phase of speech signal
+.PP
+\fBParameters\fP
+.RS 4
+\fIre\fP real part 
+.br
+\fIim\fP imaginary part 
+.br
+\fIphase\fP of speech 
+.RE
+.PP
+
+.SS "void Analysis::pSpectrum (float * re, float * im, float *& p)"
+Calculate power spectrum
+.PP
+\fBParameters\fP
+.RS 4
+\fIre\fP real part 
+.br
+\fIim\fP imaginary part 
+.br
+\fIp\fP power spectrum 
+.RE
+.PP
+
+.SS "void Analysis::runAnalysis (\fBTWAVData\fP * twavData)"
+Perform spectral analysis
+.PP
+Include applying DFT and obtaining power spectrum 
+.PP
+\fBParameters\fP
+.RS 4
+\fItwavData\fP WAV data 
+.RE
+.PP
+
+.SS "void Analysis::runIDFT ()"
+Perform IDFT on each frame 
+.SS "int Analysis::setnFFT (int n)"
+Set the value of nFFT
+.PP
+Calculate nFFT given frame length 
+.PP
+\fBParameters\fP
+.RS 4
+\fIn\fP frame length 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+nFFT 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

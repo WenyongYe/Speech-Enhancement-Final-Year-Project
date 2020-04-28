@@ -1,0 +1,83 @@
+\hypertarget{class_i_o}{}\doxysection{IO Class Reference}
+\label{class_i_o}\index{IO@{IO}}
+
+
+\mbox{\hyperlink{class_i_o}{IO}}.  
+
+
+
+
+{\ttfamily \#include $<$I\+O.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_o_a49b27a2ee79bce0de4e3ef163cbebd30}\label{class_i_o_a49b27a2ee79bce0de4e3ef163cbebd30}} 
+\mbox{\hyperlink{class_i_o_a49b27a2ee79bce0de4e3ef163cbebd30}{IO}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_o_a44861ff225d351615179f0f24cb8d7f6}\label{class_i_o_a44861ff225d351615179f0f24cb8d7f6}} 
+\mbox{\hyperlink{class_i_o_a44861ff225d351615179f0f24cb8d7f6}{$\sim$\+IO}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_o_a6d87ed556436d570c7f5f490c5a9a24d}{Input}} ()
+\item 
+void \mbox{\hyperlink{class_i_o_a90ccb4df364bf3aac01fea68f74de1df}{Output}} ()
+\item 
+void \mbox{\hyperlink{class_i_o_a12f3e1f76a75a3df5dee73ad66e77394}{Replace\+Wave}} (\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$\&\mbox{\hyperlink{class_i_o_a4c4b600e25dcd126fa3230fb54ecfd33}{twav\+Data}}, float $\ast$\&wave, int new\+Length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_i_o_a4c4b600e25dcd126fa3230fb54ecfd33}\label{class_i_o_a4c4b600e25dcd126fa3230fb54ecfd33}} 
+\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$ \mbox{\hyperlink{class_i_o_a4c4b600e25dcd126fa3230fb54ecfd33}{twav\+Data}}
+\begin{DoxyCompactList}\small\item\em W\+AV data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_o_af0ced05cf416d40b5208a445ec20e61f}\label{class_i_o_af0ced05cf416d40b5208a445ec20e61f}} 
+char $\ast$ \mbox{\hyperlink{class_i_o_af0ced05cf416d40b5208a445ec20e61f}{output}}
+\begin{DoxyCompactList}\small\item\em output file name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_i_o_ad173735aabe598ccb5d1a8f1396f41ac}\label{class_i_o_ad173735aabe598ccb5d1a8f1396f41ac}} 
+char $\ast$ \mbox{\hyperlink{class_i_o_ad173735aabe598ccb5d1a8f1396f41ac}{input}}
+\begin{DoxyCompactList}\small\item\em input file name \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_i_o}{IO}}. 
+
+\mbox{\hyperlink{class_i_o}{IO}} functions, used in each operation 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_o_a6d87ed556436d570c7f5f490c5a9a24d}\label{class_i_o_a6d87ed556436d570c7f5f490c5a9a24d}} 
+\index{IO@{IO}!Input@{Input}}
+\index{Input@{Input}!IO@{IO}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily void I\+O\+::\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Input function
+
+Input W\+AV file and load the data given file name. \mbox{\Hypertarget{class_i_o_a90ccb4df364bf3aac01fea68f74de1df}\label{class_i_o_a90ccb4df364bf3aac01fea68f74de1df}} 
+\index{IO@{IO}!Output@{Output}}
+\index{Output@{Output}!IO@{IO}}
+\doxysubsubsection{\texorpdfstring{Output()}{Output()}}
+{\footnotesize\ttfamily void I\+O\+::\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Output function
+
+Output W\+AV file and write the data given file name. \mbox{\Hypertarget{class_i_o_a12f3e1f76a75a3df5dee73ad66e77394}\label{class_i_o_a12f3e1f76a75a3df5dee73ad66e77394}} 
+\index{IO@{IO}!ReplaceWave@{ReplaceWave}}
+\index{ReplaceWave@{ReplaceWave}!IO@{IO}}
+\doxysubsubsection{\texorpdfstring{ReplaceWave()}{ReplaceWave()}}
+{\footnotesize\ttfamily void I\+O\+::\+Replace\+Wave (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$\&}]{twav\+Data,  }\item[{float $\ast$\&}]{wave,  }\item[{int}]{new\+Length }\end{DoxyParamCaption})}
+
+Replace W\+AV file
+
+If applicable, replace all samples of original W\+AV file with new samples. 
+\begin{DoxyParams}{Parameters}
+{\em twav\+Data} & Original W\+AV file \\
+\hline
+{\em wave} & W\+AV file after replacement \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_o_8h}{I\+O.\+h}}\item 
+I\+O.\+cpp\end{DoxyCompactItemize}

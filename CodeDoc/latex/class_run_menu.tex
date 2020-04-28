@@ -1,0 +1,113 @@
+\hypertarget{class_run_menu}{}\doxysection{Run\+Menu Class Reference}
+\label{class_run_menu}\index{RunMenu@{RunMenu}}
+
+
+Operations from menu.  
+
+
+
+
+{\ttfamily \#include $<$Run\+Menu.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_run_menu_a0474ee129e69a778b539c275d5750d3e}\label{class_run_menu_a0474ee129e69a778b539c275d5750d3e}} 
+\mbox{\hyperlink{class_run_menu_a0474ee129e69a778b539c275d5750d3e}{Run\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_run_menu_afc96685967474e73f9aa334e605033c0}\label{class_run_menu_afc96685967474e73f9aa334e605033c0}} 
+\mbox{\hyperlink{class_run_menu_afc96685967474e73f9aa334e605033c0}{$\sim$\+Run\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_run_menu_ab9f0727c61ce283cdd749784fe94a78e}{test\+IO}} ()
+\item 
+void \mbox{\hyperlink{class_run_menu_af66dac05e838d49d1eaf181fb4a952e3}{test\+I\+D\+FT}} ()
+\item 
+void \mbox{\hyperlink{class_run_menu_a96060d4a734729940ef91928d3009feb}{add\+Noise2\+Speech}} ()
+\item 
+void \mbox{\hyperlink{class_run_menu_a9f2725602f24faff97e12d73b258594c}{add\+Gaussian\+Noise2\+Speech}} ()
+\item 
+void \mbox{\hyperlink{class_run_menu_ac5594e64ecca4ff1c3813f31d549ffbc}{spectral\+Subtract}} ()
+\item 
+void \mbox{\hyperlink{class_run_menu_a6a92453a5589f450d81e97eb8050d5a4}{wiener\+Filter}} ()
+\item 
+void \mbox{\hyperlink{class_run_menu_ac58686a26f1d7eb9278c42a754668a66}{evaluation}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_run_menu_aae012b4620990a17c89345aa280ebf93}\label{class_run_menu_aae012b4620990a17c89345aa280ebf93}} 
+\mbox{\hyperlink{class_check_data}{Check\+Data}} $\ast$ \mbox{\hyperlink{class_run_menu_aae012b4620990a17c89345aa280ebf93}{check\+Data}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_check_data}{Check\+Data}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_run_menu_af68e387e116496a4cc42ae3cb090e121}\label{class_run_menu_af68e387e116496a4cc42ae3cb090e121}} 
+\mbox{\hyperlink{class_i_o}{IO}} $\ast$ \mbox{\hyperlink{class_run_menu_af68e387e116496a4cc42ae3cb090e121}{io}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_i_o}{IO}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Operations from menu. 
+
+Perform operations selected from the menu in main.\+cpp 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_run_menu_a9f2725602f24faff97e12d73b258594c}\label{class_run_menu_a9f2725602f24faff97e12d73b258594c}} 
+\index{RunMenu@{RunMenu}!addGaussianNoise2Speech@{addGaussianNoise2Speech}}
+\index{addGaussianNoise2Speech@{addGaussianNoise2Speech}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{addGaussianNoise2Speech()}{addGaussianNoise2Speech()}}
+{\footnotesize\ttfamily void Run\+Menu\+::add\+Gaussian\+Noise2\+Speech (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Test I\+D\+FT
+
+Input speech W\+AV file to obtain power spectrum and phase, apply I\+D\+FT to restore W\+AV file \mbox{\Hypertarget{class_run_menu_a96060d4a734729940ef91928d3009feb}\label{class_run_menu_a96060d4a734729940ef91928d3009feb}} 
+\index{RunMenu@{RunMenu}!addNoise2Speech@{addNoise2Speech}}
+\index{addNoise2Speech@{addNoise2Speech}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{addNoise2Speech()}{addNoise2Speech()}}
+{\footnotesize\ttfamily void Run\+Menu\+::add\+Noise2\+Speech (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Add noise to speech
+
+Add noise from W\+AV file to another W\+AV file given S\+NR \mbox{\Hypertarget{class_run_menu_ac58686a26f1d7eb9278c42a754668a66}\label{class_run_menu_ac58686a26f1d7eb9278c42a754668a66}} 
+\index{RunMenu@{RunMenu}!evaluation@{evaluation}}
+\index{evaluation@{evaluation}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{evaluation()}{evaluation()}}
+{\footnotesize\ttfamily void Run\+Menu\+::evaluation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_evaluation}{Evaluation}}
+
+Segmental S\+NR implemented for objective quality measures \mbox{\Hypertarget{class_run_menu_ac5594e64ecca4ff1c3813f31d549ffbc}\label{class_run_menu_ac5594e64ecca4ff1c3813f31d549ffbc}} 
+\index{RunMenu@{RunMenu}!spectralSubtract@{spectralSubtract}}
+\index{spectralSubtract@{spectralSubtract}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{spectralSubtract()}{spectralSubtract()}}
+{\footnotesize\ttfamily void Run\+Menu\+::spectral\+Subtract (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Spectral subtraction
+
+Apply recursive noise estimation and perform spectral subtraction for speech enhancement \mbox{\Hypertarget{class_run_menu_af66dac05e838d49d1eaf181fb4a952e3}\label{class_run_menu_af66dac05e838d49d1eaf181fb4a952e3}} 
+\index{RunMenu@{RunMenu}!testIDFT@{testIDFT}}
+\index{testIDFT@{testIDFT}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{testIDFT()}{testIDFT()}}
+{\footnotesize\ttfamily void Run\+Menu\+::test\+I\+D\+FT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Test I\+D\+FT
+
+Input speech W\+AV file to obtain power spectrum and phase, apply I\+D\+FT to restore W\+AV file \mbox{\Hypertarget{class_run_menu_ab9f0727c61ce283cdd749784fe94a78e}\label{class_run_menu_ab9f0727c61ce283cdd749784fe94a78e}} 
+\index{RunMenu@{RunMenu}!testIO@{testIO}}
+\index{testIO@{testIO}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{testIO()}{testIO()}}
+{\footnotesize\ttfamily void Run\+Menu\+::test\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Test \mbox{\hyperlink{class_i_o}{IO}} function
+
+Input speech W\+AV file, output the same W\+AV file \mbox{\Hypertarget{class_run_menu_a6a92453a5589f450d81e97eb8050d5a4}\label{class_run_menu_a6a92453a5589f450d81e97eb8050d5a4}} 
+\index{RunMenu@{RunMenu}!wienerFilter@{wienerFilter}}
+\index{wienerFilter@{wienerFilter}!RunMenu@{RunMenu}}
+\doxysubsubsection{\texorpdfstring{wienerFilter()}{wienerFilter()}}
+{\footnotesize\ttfamily void Run\+Menu\+::wiener\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Wiener filter
+
+Apply Wiener filter for speech enhancement 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_run_menu_8h}{Run\+Menu.\+h}}\item 
+Run\+Menu.\+cpp\end{DoxyCompactItemize}

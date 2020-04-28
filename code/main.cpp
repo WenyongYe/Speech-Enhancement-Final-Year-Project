@@ -6,75 +6,77 @@
 #include "Analysis.h"
 #include "Simulation.h"
 #include "RunMenu.h"
-
+#include <string>
 
 using namespace std;
 
 
 //menu for the program
-void menu(){
+void menu() {
 
-    cout<<endl<<"CSC3002 Program Running ..."<<endl<<endl;
-
-
-    RunMenu menu;
-
-    int num;
+	cout << endl << "CSC3002 Program Running ..." << endl << endl;
 
 
-    do{
-        cout<<endl;
-        cout<<"------------------------------------"<<endl;
-        cout<<"--------------- Menu ---------------"<<endl;
-        cout<<"------------------------------------"<<endl;
+	string num;
 
-        cout<<"Choose number to select operations"<<endl<<endl;
-        cout<<"1. Test IO function"<<endl<<"2. Test DFT and IDFT"
-        <<endl<<"3. Noisy Speech Simulation (Add noise to clean speech)"<<
-        endl<<"4. Noisy Speech Simulation (Add Gaussian white noise)"<<endl<<
-        "5. Speech Enhancement (Spectral subtraction)"<<endl<<"6. Speech Enhancement (Wiener filter)"<<endl<<
-        "7. Evaluation (Segmental SNR evaluation)"<<endl<<"8. Exit"<<endl;
+	RunMenu menu;
 
-        cout<<endl<<"Input operation number: ";
-        cin>>num;
-        switch (num){
-            case 1:
-                menu.testIO();
-                break;
-            case 2:
-                menu.testIDFT();
-                break;
-            case 3:
-                menu.addNoise2Speech();
-                break;
-            case 4:
-                menu.addGaussianNoise2Speech();
-                break;
-            case 5:
-                menu.spectralSubtract();
-                break;
-            case 6:
-                menu.wiener();
-                break;
-            case 7:
-                menu.evaluation();
-                break;
-            case 8:
-                cout<<endl<<"Exit program...";
-                exit(0);
-                
-            default:
-            cout<<"Incorrect value. Please input again "<<endl;
+	do {
+		cout << endl;
+		cout << "------------------------------------" << endl;
+		cout << "--------------- Menu ---------------" << endl;
+		cout << "------------------------------------" << endl;
 
-        }
+		cout << "Choose number to select operations" << endl << endl;
+		cout << "1. Test IO function" << endl << "2. Test DFT and IDFT" <<
+			endl << "3. Noisy Speech Simulation (Add noise to clean speech)" <<
+			endl << "4. Noisy Speech Simulation (Add white Gaussian noise)" <<
+			endl << "5. Speech Enhancement (Spectral subtraction)" <<
+			endl << "6. Speech Enhancement (Wiener filter)" <<
+			endl << "7. Evaluation (Segmental SNR evaluation)" <<
+			endl << "8. Exit" << endl;
 
-    }while(num!=8);
+		cout << endl << "Input operation number: ";
+		cin >> num;
 
+		if (num == "1") {
+			menu.testIO();
+		}
+		else if (num == "2") {
+			
+			menu.testIDFT();
+		}
+		else if (num == "3") {
+			
+			menu.addNoise2Speech();
+		}
+		else if (num == "4") {
+			
+			menu.addGaussianNoise2Speech();
+		}
+		else if (num == "5") {
+			
+			menu.spectralSubtract();
+		}
+		else if (num == "6") {
+			menu.wienerFilter();
+		}
+		else if (num == "7") {
+			menu.evaluation();
+		}
+		else if (num == "8") {
+			cout << endl << "Exit program...";
+			exit(0);
+		}
+		else
+			cout << "Incorrect value. Please input again " << endl;
 
+	} while (num != "8");
 }
 
 
-int main(){
-    menu();
+int main() {
+
+	menu();
 }
 

@@ -1,0 +1,97 @@
+.TH "Enhancement" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Enhancement \- Speech enhancement\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Enhancement\&.h>\fP
+.PP
+Inherits \fBAnalysis\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBnoiseEstimation\fP (int z, int \fBx\fP)"
+.br
+.ti -1c
+.RI "void \fBrecursiveNoiseEstimation\fP (float a)"
+.br
+.ti -1c
+.RI "void \fBspectralSubtraction\fP ()"
+.br
+.ti -1c
+.RI "void \fBwienerFilter\fP (float alpha, float beta)"
+.br
+.ti -1c
+.RI "void \fBrunWiener\fP ()"
+.br
+.ti -1c
+.RI "void \fBrunWiener\fP (float alpha, float beta)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Speech enhancement\&. 
+
+Derived class from \fBAnalysis\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Enhancement::noiseEstimation (int z, int x)"
+Noise estimation
+.PP
+\fBParameters\fP
+.RS 4
+\fIz\fP the number of frames used in head 
+.br
+\fIx\fP the number of frames used in tail 
+.RE
+.PP
+
+.SS "void Enhancement::recursiveNoiseEstimation (float a)"
+Recursive noise estimation
+.PP
+Used together with the \fBspectralSubtraction()\fP 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP the smoothing factor used for recursive noise estimation 
+.RE
+.PP
+
+.SS "void Enhancement::runWiener ()"
+Perform Wiener filter with default parameters 
+.SS "void Enhancement::runWiener (float alpha, float beta)"
+Perform Wiener filter with input parameters
+.PP
+\fBParameters\fP
+.RS 4
+\fIalpha\fP smoothing factor alpha 
+.br
+\fIbeta\fP smoothing factor beta 
+.RE
+.PP
+
+.SS "void Enhancement::spectralSubtraction ()"
+Spectral subtraction
+.PP
+Subtract power spectrum of speech signal and estimated noise 
+.SS "void Enhancement::wienerFilter (float alpha, float beta)"
+Wiener filter
+.PP
+\fBParameters\fP
+.RS 4
+\fIalpha\fP smoothing factor alpha 
+.br
+\fIbeta\fP smoothing factor beta 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

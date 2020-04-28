@@ -1,0 +1,128 @@
+\hypertarget{class_simulation}{}\doxysection{Simulation Class Reference}
+\label{class_simulation}\index{Simulation@{Simulation}}
+
+
+Noise simulation.  
+
+
+
+
+{\ttfamily \#include $<$Simulation.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_simulation_a8ff782839b8bad147b581e0469a979a6}{input\+S\+NR}} ()
+\item 
+float \mbox{\hyperlink{class_simulation_af76203c7b69025f204b66e7e472e02e0}{box\+\_\+muller}} (float \mbox{\hyperlink{class_simulation_a9c155c7eac83448dbcb2d391a82e6564}{sigma}})
+\item 
+void \mbox{\hyperlink{class_simulation_aadc64a0cbfc4bb14f1b3cae80194c50e}{add\+Gaussian\+Noise}} (\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$twav\+Data)
+\item 
+void \mbox{\hyperlink{class_simulation_ad30d54b98528e07095c42efcf9fa3e3b}{add\+Noise}} (\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$twav\+Data1, \mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$twav\+Data2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_simulation_af74b0cbbe4a08a28e5b17bf5f3e32c4e}\label{class_simulation_af74b0cbbe4a08a28e5b17bf5f3e32c4e}} 
+float \mbox{\hyperlink{class_simulation_af74b0cbbe4a08a28e5b17bf5f3e32c4e}{S\+NR}}
+\begin{DoxyCompactList}\small\item\em S\+NR value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_a6f65e2ab0a76b1ac694bd73f51b89404}\label{class_simulation_a6f65e2ab0a76b1ac694bd73f51b89404}} 
+float \mbox{\hyperlink{class_simulation_a6f65e2ab0a76b1ac694bd73f51b89404}{p\+Noise}}
+\begin{DoxyCompactList}\small\item\em power of noise \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_af2caf2ba3fbd85ecc4a515393f941840}\label{class_simulation_af2caf2ba3fbd85ecc4a515393f941840}} 
+float \mbox{\hyperlink{class_simulation_af2caf2ba3fbd85ecc4a515393f941840}{p\+Signal}}
+\begin{DoxyCompactList}\small\item\em power of signal \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_a356d7c3e43a668db104c542b49877671}\label{class_simulation_a356d7c3e43a668db104c542b49877671}} 
+float \mbox{\hyperlink{class_simulation_a356d7c3e43a668db104c542b49877671}{p\+Signal\+Noise}}
+\begin{DoxyCompactList}\small\item\em power of noise (Sample 1) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_a67bb3d8a6095eca4e75693bf5dfbf4b0}\label{class_simulation_a67bb3d8a6095eca4e75693bf5dfbf4b0}} 
+float \mbox{\hyperlink{class_simulation_a67bb3d8a6095eca4e75693bf5dfbf4b0}{p\+Signal\+Clean}}
+\begin{DoxyCompactList}\small\item\em power of clean speech (Sample 2) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_ae04048475ffcc8f3c25a0ce308b66ea5}\label{class_simulation_ae04048475ffcc8f3c25a0ce308b66ea5}} 
+float \mbox{\hyperlink{class_simulation_ae04048475ffcc8f3c25a0ce308b66ea5}{sum}}
+\begin{DoxyCompactList}\small\item\em sum value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_af25e6dadbefe2d18ff5f583093926b15}\label{class_simulation_af25e6dadbefe2d18ff5f583093926b15}} 
+float \mbox{\hyperlink{class_simulation_af25e6dadbefe2d18ff5f583093926b15}{noise\+New\+Std}}
+\begin{DoxyCompactList}\small\item\em new std of noise \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_abda2f499fdce7d5c8bfdb6bb7c313459}\label{class_simulation_abda2f499fdce7d5c8bfdb6bb7c313459}} 
+float \mbox{\hyperlink{class_simulation_abda2f499fdce7d5c8bfdb6bb7c313459}{noise\+Old\+Std}}
+\begin{DoxyCompactList}\small\item\em old std of noise \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_aa416c92baaa761fc92825088a2c1bc32}\label{class_simulation_aa416c92baaa761fc92825088a2c1bc32}} 
+float \mbox{\hyperlink{class_simulation_aa416c92baaa761fc92825088a2c1bc32}{delta}}
+\begin{DoxyCompactList}\small\item\em delta \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_a9c155c7eac83448dbcb2d391a82e6564}\label{class_simulation_a9c155c7eac83448dbcb2d391a82e6564}} 
+float \mbox{\hyperlink{class_simulation_a9c155c7eac83448dbcb2d391a82e6564}{sigma}}
+\begin{DoxyCompactList}\small\item\em sigma \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_aacb299292ddc7a79351bfa0e9c3b5e2a}\label{class_simulation_aacb299292ddc7a79351bfa0e9c3b5e2a}} 
+float $\ast$ \mbox{\hyperlink{class_simulation_aacb299292ddc7a79351bfa0e9c3b5e2a}{white\+Noise}}
+\begin{DoxyCompactList}\small\item\em Gaussian white noise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_ab82a1d5ff758d4bb25921a4ae4e5aeed}\label{class_simulation_ab82a1d5ff758d4bb25921a4ae4e5aeed}} 
+float $\ast$ \mbox{\hyperlink{class_simulation_ab82a1d5ff758d4bb25921a4ae4e5aeed}{noise}}
+\begin{DoxyCompactList}\small\item\em noisy recording \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simulation_a672a303743a30610809940ed98b7a880}\label{class_simulation_a672a303743a30610809940ed98b7a880}} 
+float {\bfseries PI} = 3.\+1416
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Noise simulation. 
+
+Used in the \mbox{\hyperlink{class_run_menu}{Run\+Menu}} for generating noise 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simulation_aadc64a0cbfc4bb14f1b3cae80194c50e}\label{class_simulation_aadc64a0cbfc4bb14f1b3cae80194c50e}} 
+\index{Simulation@{Simulation}!addGaussianNoise@{addGaussianNoise}}
+\index{addGaussianNoise@{addGaussianNoise}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{addGaussianNoise()}{addGaussianNoise()}}
+{\footnotesize\ttfamily void Simulation\+::add\+Gaussian\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$}]{twav\+Data }\end{DoxyParamCaption})}
+
+Add white Gaussian noise to speech
+
+Generate white Gaussian noise and add it to given speech, according to specific S\+NR 
+\begin{DoxyParams}{Parameters}
+{\em twav\+Data} & W\+AV data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_simulation_ad30d54b98528e07095c42efcf9fa3e3b}\label{class_simulation_ad30d54b98528e07095c42efcf9fa3e3b}} 
+\index{Simulation@{Simulation}!addNoise@{addNoise}}
+\index{addNoise@{addNoise}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{addNoise()}{addNoise()}}
+{\footnotesize\ttfamily void Simulation\+::add\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$}]{twav\+Data1,  }\item[{\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$}]{twav\+Data2 }\end{DoxyParamCaption})}
+
+Add noisy file to speech
+
+Given noisy speech and clean speech, add noise to clean speech according to specific S\+NR 
+\begin{DoxyParams}{Parameters}
+{\em twav\+Data1} & W\+AV data 1 (Noisy speech) \\
+\hline
+{\em twav\+Data2} & W\+AV data 2 (Clean speech) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_simulation_af76203c7b69025f204b66e7e472e02e0}\label{class_simulation_af76203c7b69025f204b66e7e472e02e0}} 
+\index{Simulation@{Simulation}!box\_muller@{box\_muller}}
+\index{box\_muller@{box\_muller}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{box\_muller()}{box\_muller()}}
+{\footnotesize\ttfamily float Simulation\+::box\+\_\+muller (\begin{DoxyParamCaption}\item[{float}]{sigma }\end{DoxyParamCaption})}
+
+Box-\/\+Muller Transform
+
+Box-\/\+Muller transform to perform Gaussian distribution. Convert uniform distribution to Gaussian distribution. Used for generating random number for Gaussian white noise. 
+\begin{DoxyParams}{Parameters}
+{\em sigma} & standard deviation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Gaussian distribution random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulation_a8ff782839b8bad147b581e0469a979a6}\label{class_simulation_a8ff782839b8bad147b581e0469a979a6}} 
+\index{Simulation@{Simulation}!inputSNR@{inputSNR}}
+\index{inputSNR@{inputSNR}!Simulation@{Simulation}}
+\doxysubsubsection{\texorpdfstring{inputSNR()}{inputSNR()}}
+{\footnotesize\ttfamily void Simulation\+::input\+S\+NR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Input value of S\+NR 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_simulation_8h}{Simulation.\+h}}\item 
+Simulation.\+cpp\end{DoxyCompactItemize}

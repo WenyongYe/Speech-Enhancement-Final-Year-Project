@@ -1,0 +1,266 @@
+\hypertarget{class_analysis}{}\doxysection{Analysis Class Reference}
+\label{class_analysis}\index{Analysis@{Analysis}}
+
+
+Spectral \mbox{\hyperlink{class_analysis}{Analysis}}.  
+
+
+
+
+{\ttfamily \#include $<$Analysis.\+h$>$}
+
+Inheritance diagram for Analysis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_analysis}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_analysis_adea2b59aeb5cc8c01a3d1cb262a5c043}\label{class_analysis_adea2b59aeb5cc8c01a3d1cb262a5c043}} 
+\mbox{\hyperlink{class_analysis_adea2b59aeb5cc8c01a3d1cb262a5c043}{Analysis}} (int i)
+\begin{DoxyCompactList}\small\item\em constructor with sampling period \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a172ae0a3cbb68daa373baf081f5c00d9}\label{class_analysis_a172ae0a3cbb68daa373baf081f5c00d9}} 
+\mbox{\hyperlink{class_analysis_a172ae0a3cbb68daa373baf081f5c00d9}{$\sim$\+Analysis}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_analysis_aacdb83caf79b1e76cfc2db37cd32b5d6}{run\+Analysis}} (\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$twav\+Data)
+\item 
+void \mbox{\hyperlink{class_analysis_a05e94c00a6a32e28e8b466b065f98a01}{Pha}} (float $\ast$\mbox{\hyperlink{class_analysis_ab414016d6375862b9e9e941c9c9fe2e8}{re}}, float $\ast$\mbox{\hyperlink{class_analysis_ae3d4b7940f48c2960358ea3c8f73bf13}{im}}, float $\ast$\&p)
+\item 
+int \mbox{\hyperlink{class_analysis_a6c2598df868425a77b3547902a251efa}{setn\+F\+FT}} (int n)
+\item 
+void \mbox{\hyperlink{class_analysis_a68af75eaa7ffe8a9f9752ffd469ec7ba}{D\+FT}} (float $\ast$\mbox{\hyperlink{class_analysis_a668fb53a056f1b302df00461fff9b3f7}{x}}, float $\ast$\&\mbox{\hyperlink{class_analysis_ab414016d6375862b9e9e941c9c9fe2e8}{re}}, float $\ast$\&\mbox{\hyperlink{class_analysis_ae3d4b7940f48c2960358ea3c8f73bf13}{im}})
+\item 
+void \mbox{\hyperlink{class_analysis_af83149a6acda7945f4fd804b2cf762d8}{p\+Spectrum}} (float $\ast$\mbox{\hyperlink{class_analysis_ab414016d6375862b9e9e941c9c9fe2e8}{re}}, float $\ast$\mbox{\hyperlink{class_analysis_ae3d4b7940f48c2960358ea3c8f73bf13}{im}}, float $\ast$\&p)
+\item 
+void \mbox{\hyperlink{class_analysis_a401917bbd88ce1ef4e69c560c6043843}{frame\+Len}} (\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$twav\+Data)
+\item 
+void \mbox{\hyperlink{class_analysis_afe469e62e8578b8d268feef01a3417e9}{init\+Array}} ()
+\item 
+void \mbox{\hyperlink{class_analysis_ab5c3cbb0299ec43887dd67f96fc884fd}{I\+D\+FT}} (float $\ast$a, float $\ast$p, float $\ast$\&\mbox{\hyperlink{class_analysis_a668fb53a056f1b302df00461fff9b3f7}{x}})
+\item 
+void \mbox{\hyperlink{class_analysis_adad6ec5ccbb99cc4290a1bd64596c9f6}{run\+I\+D\+FT}} ()
+\item 
+void \mbox{\hyperlink{class_analysis_a9d63efff0672b7996666d99e04a7059d}{half\+Add}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_analysis_ad20bc6bc32696d4217a74442d4dfdc15}\label{class_analysis_ad20bc6bc32696d4217a74442d4dfdc15}} 
+float \mbox{\hyperlink{class_analysis_ad20bc6bc32696d4217a74442d4dfdc15}{PI}} =3.\+1416
+\begin{DoxyCompactList}\small\item\em pi \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a8bfa8c4648d86bee43da02042416f28e}\label{class_analysis_a8bfa8c4648d86bee43da02042416f28e}} 
+int \mbox{\hyperlink{class_analysis_a8bfa8c4648d86bee43da02042416f28e}{frm\+Len}}
+\begin{DoxyCompactList}\small\item\em frame length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_aa66eb7c3996db13b693c98e4be6f3e56}\label{class_analysis_aa66eb7c3996db13b693c98e4be6f3e56}} 
+int \mbox{\hyperlink{class_analysis_aa66eb7c3996db13b693c98e4be6f3e56}{frm\+Shift}}
+\begin{DoxyCompactList}\small\item\em frame shift \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a395da6d96ee4fa6c2799b89e477474e1}\label{class_analysis_a395da6d96ee4fa6c2799b89e477474e1}} 
+int \mbox{\hyperlink{class_analysis_a395da6d96ee4fa6c2799b89e477474e1}{n\+F\+FT}}
+\begin{DoxyCompactList}\small\item\em nearest power of 2 to frame length \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a3c7468c788d5585b00fdf4281f240d4a}\label{class_analysis_a3c7468c788d5585b00fdf4281f240d4a}} 
+int \mbox{\hyperlink{class_analysis_a3c7468c788d5585b00fdf4281f240d4a}{n\+F\+F\+T2}}
+\begin{DoxyCompactList}\small\item\em half of n\+F\+FT \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a503c89e1cf38642dd6335efff07ed346}\label{class_analysis_a503c89e1cf38642dd6335efff07ed346}} 
+int \mbox{\hyperlink{class_analysis_a503c89e1cf38642dd6335efff07ed346}{num\+Frms}}
+\begin{DoxyCompactList}\small\item\em number of frames \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a1d70be858683a809889d407d987f1687}\label{class_analysis_a1d70be858683a809889d407d987f1687}} 
+int \mbox{\hyperlink{class_analysis_a1d70be858683a809889d407d987f1687}{new\+Wave\+Len}}
+\begin{DoxyCompactList}\small\item\em length of new wave \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a1717d0ace1ff7a63a556a7cf61f19149}\label{class_analysis_a1717d0ace1ff7a63a556a7cf61f19149}} 
+int \mbox{\hyperlink{class_analysis_a1717d0ace1ff7a63a556a7cf61f19149}{samp\+\_\+rate}}
+\begin{DoxyCompactList}\small\item\em sampling rate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a2d1856f2abb0c490d621c17ad0224271}\label{class_analysis_a2d1856f2abb0c490d621c17ad0224271}} 
+int \mbox{\hyperlink{class_analysis_a2d1856f2abb0c490d621c17ad0224271}{sam\+\_\+period}}
+\begin{DoxyCompactList}\small\item\em sampling period \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a8895395f3734031671c509765e8da5c0}\label{class_analysis_a8895395f3734031671c509765e8da5c0}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a8895395f3734031671c509765e8da5c0}{w}}
+\begin{DoxyCompactList}\small\item\em speech wave \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a668fb53a056f1b302df00461fff9b3f7}\label{class_analysis_a668fb53a056f1b302df00461fff9b3f7}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a668fb53a056f1b302df00461fff9b3f7}{x}}
+\begin{DoxyCompactList}\small\item\em frequency \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_ab414016d6375862b9e9e941c9c9fe2e8}\label{class_analysis_ab414016d6375862b9e9e941c9c9fe2e8}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_ab414016d6375862b9e9e941c9c9fe2e8}{re}}
+\begin{DoxyCompactList}\small\item\em real part \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_ae3d4b7940f48c2960358ea3c8f73bf13}\label{class_analysis_ae3d4b7940f48c2960358ea3c8f73bf13}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_ae3d4b7940f48c2960358ea3c8f73bf13}{im}}
+\begin{DoxyCompactList}\small\item\em imaginary part \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a504d241fb4a55f71ab9343e351f31f9c}\label{class_analysis_a504d241fb4a55f71ab9343e351f31f9c}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a504d241fb4a55f71ab9343e351f31f9c}{phase}}
+\begin{DoxyCompactList}\small\item\em phase \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_ac192afb425e8e81efd4bd9e23f8218cc}\label{class_analysis_ac192afb425e8e81efd4bd9e23f8218cc}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_ac192afb425e8e81efd4bd9e23f8218cc}{power}}
+\begin{DoxyCompactList}\small\item\em power of speech \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a204dd1afa6b2b1b2849df51f54013a78}\label{class_analysis_a204dd1afa6b2b1b2849df51f54013a78}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a204dd1afa6b2b1b2849df51f54013a78}{new\+Wave}}
+\begin{DoxyCompactList}\small\item\em new speech wave for output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a5074cc39b456325b6d014cb5d27c6aa9}\label{class_analysis_a5074cc39b456325b6d014cb5d27c6aa9}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a5074cc39b456325b6d014cb5d27c6aa9}{estimate\+\_\+head}}
+\begin{DoxyCompactList}\small\item\em noise estimation (head) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a6a05e1b82128b1420e19a4437424073f}\label{class_analysis_a6a05e1b82128b1420e19a4437424073f}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a6a05e1b82128b1420e19a4437424073f}{estimate\+\_\+tail}}
+\begin{DoxyCompactList}\small\item\em noise estimation (tail) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a1ac7fad3d252fcac08d047a703e0d296}\label{class_analysis_a1ac7fad3d252fcac08d047a703e0d296}} 
+float $\ast$ \mbox{\hyperlink{class_analysis_a1ac7fad3d252fcac08d047a703e0d296}{estimate\+\_\+avg}}
+\begin{DoxyCompactList}\small\item\em average noise estimation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a0dc3636d053b419d2a13bded12271895}\label{class_analysis_a0dc3636d053b419d2a13bded12271895}} 
+float $\ast$$\ast$ \mbox{\hyperlink{class_analysis_a0dc3636d053b419d2a13bded12271895}{im\+\_\+array}}
+\begin{DoxyCompactList}\small\item\em imaginary part 2-\/D array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_aee0a7506ce3e117f4f3f36569d5f8004}\label{class_analysis_aee0a7506ce3e117f4f3f36569d5f8004}} 
+float $\ast$$\ast$ \mbox{\hyperlink{class_analysis_aee0a7506ce3e117f4f3f36569d5f8004}{re\+\_\+array}}
+\begin{DoxyCompactList}\small\item\em real part 2-\/D array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_ad63e9641bce19b395e093e7c4cfa4146}\label{class_analysis_ad63e9641bce19b395e093e7c4cfa4146}} 
+float $\ast$$\ast$ \mbox{\hyperlink{class_analysis_ad63e9641bce19b395e093e7c4cfa4146}{pha\+\_\+array}}
+\begin{DoxyCompactList}\small\item\em phase 2-\/D array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a014e84821ca119dff804db4dcb6c7364}\label{class_analysis_a014e84821ca119dff804db4dcb6c7364}} 
+float $\ast$$\ast$ \mbox{\hyperlink{class_analysis_a014e84821ca119dff804db4dcb6c7364}{power\+\_\+array}}
+\begin{DoxyCompactList}\small\item\em power spectrum 2-\/D array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_ac4a42d49bdf8d872fd4c0b2d7a68a3ed}\label{class_analysis_ac4a42d49bdf8d872fd4c0b2d7a68a3ed}} 
+float $\ast$$\ast$ \mbox{\hyperlink{class_analysis_ac4a42d49bdf8d872fd4c0b2d7a68a3ed}{estimate\+\_\+recursion}}
+\begin{DoxyCompactList}\small\item\em recursive noise estimation 2-\/D array \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_analysis_a16570003268a3955f5562b26ca85abcc}\label{class_analysis_a16570003268a3955f5562b26ca85abcc}} 
+float $\ast$$\ast$ \mbox{\hyperlink{class_analysis_a16570003268a3955f5562b26ca85abcc}{wave}}
+\begin{DoxyCompactList}\small\item\em wave after I\+D\+FT 2-\/D array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Spectral \mbox{\hyperlink{class_analysis}{Analysis}}. 
+
+Base class of the \mbox{\hyperlink{class_enhancement}{Enhancement}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_analysis_a68af75eaa7ffe8a9f9752ffd469ec7ba}\label{class_analysis_a68af75eaa7ffe8a9f9752ffd469ec7ba}} 
+\index{Analysis@{Analysis}!DFT@{DFT}}
+\index{DFT@{DFT}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{DFT()}{DFT()}}
+{\footnotesize\ttfamily void Analysis\+::\+D\+FT (\begin{DoxyParamCaption}\item[{float $\ast$}]{x,  }\item[{float $\ast$\&}]{re,  }\item[{float $\ast$\&}]{im }\end{DoxyParamCaption})}
+
+Discrete Fourier transform
+
+Apply D\+FT on speech to obtain real and imaginary part 
+\begin{DoxyParams}{Parameters}
+{\em x} & speech sample \\
+\hline
+{\em re} & real part \\
+\hline
+{\em im} & imaginary part \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analysis_a401917bbd88ce1ef4e69c560c6043843}\label{class_analysis_a401917bbd88ce1ef4e69c560c6043843}} 
+\index{Analysis@{Analysis}!frameLen@{frameLen}}
+\index{frameLen@{frameLen}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{frameLen()}{frameLen()}}
+{\footnotesize\ttfamily void Analysis\+::frame\+Len (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$}]{twav\+Data }\end{DoxyParamCaption})}
+
+Calculate total frame length
+
+
+\begin{DoxyParams}{Parameters}
+{\em twav\+Data} & Wav data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analysis_a9d63efff0672b7996666d99e04a7059d}\label{class_analysis_a9d63efff0672b7996666d99e04a7059d}} 
+\index{Analysis@{Analysis}!halfAdd@{halfAdd}}
+\index{halfAdd@{halfAdd}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{halfAdd()}{halfAdd()}}
+{\footnotesize\ttfamily void Analysis\+::half\+Add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Overlap half-\/add Half overlap addition to generate W\+AV signal \mbox{\Hypertarget{class_analysis_ab5c3cbb0299ec43887dd67f96fc884fd}\label{class_analysis_ab5c3cbb0299ec43887dd67f96fc884fd}} 
+\index{Analysis@{Analysis}!IDFT@{IDFT}}
+\index{IDFT@{IDFT}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{IDFT()}{IDFT()}}
+{\footnotesize\ttfamily void Analysis\+::\+I\+D\+FT (\begin{DoxyParamCaption}\item[{float $\ast$}]{a,  }\item[{float $\ast$}]{p,  }\item[{float $\ast$\&}]{x }\end{DoxyParamCaption})}
+
+Inverse Discrete Fourier Transform
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & magnitude \\
+\hline
+{\em p} & power spectrum \\
+\hline
+{\em x} & return W\+AV \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analysis_afe469e62e8578b8d268feef01a3417e9}\label{class_analysis_afe469e62e8578b8d268feef01a3417e9}} 
+\index{Analysis@{Analysis}!initArray@{initArray}}
+\index{initArray@{initArray}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{initArray()}{initArray()}}
+{\footnotesize\ttfamily void Analysis\+::init\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Array initialization \mbox{\Hypertarget{class_analysis_a05e94c00a6a32e28e8b466b065f98a01}\label{class_analysis_a05e94c00a6a32e28e8b466b065f98a01}} 
+\index{Analysis@{Analysis}!Pha@{Pha}}
+\index{Pha@{Pha}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{Pha()}{Pha()}}
+{\footnotesize\ttfamily void Analysis\+::\+Pha (\begin{DoxyParamCaption}\item[{float $\ast$}]{re,  }\item[{float $\ast$}]{im,  }\item[{float $\ast$\&}]{p }\end{DoxyParamCaption})}
+
+Phase of speech signal
+
+
+\begin{DoxyParams}{Parameters}
+{\em re} & real part \\
+\hline
+{\em im} & imaginary part \\
+\hline
+{\em phase} & of speech \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analysis_af83149a6acda7945f4fd804b2cf762d8}\label{class_analysis_af83149a6acda7945f4fd804b2cf762d8}} 
+\index{Analysis@{Analysis}!pSpectrum@{pSpectrum}}
+\index{pSpectrum@{pSpectrum}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{pSpectrum()}{pSpectrum()}}
+{\footnotesize\ttfamily void Analysis\+::p\+Spectrum (\begin{DoxyParamCaption}\item[{float $\ast$}]{re,  }\item[{float $\ast$}]{im,  }\item[{float $\ast$\&}]{p }\end{DoxyParamCaption})}
+
+Calculate power spectrum
+
+
+\begin{DoxyParams}{Parameters}
+{\em re} & real part \\
+\hline
+{\em im} & imaginary part \\
+\hline
+{\em p} & power spectrum \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analysis_aacdb83caf79b1e76cfc2db37cd32b5d6}\label{class_analysis_aacdb83caf79b1e76cfc2db37cd32b5d6}} 
+\index{Analysis@{Analysis}!runAnalysis@{runAnalysis}}
+\index{runAnalysis@{runAnalysis}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{runAnalysis()}{runAnalysis()}}
+{\footnotesize\ttfamily void Analysis\+::run\+Analysis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_t_w_a_v_data}{T\+W\+A\+V\+Data}} $\ast$}]{twav\+Data }\end{DoxyParamCaption})}
+
+Perform spectral analysis
+
+Include applying D\+FT and obtaining power spectrum 
+\begin{DoxyParams}{Parameters}
+{\em twav\+Data} & W\+AV data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_analysis_adad6ec5ccbb99cc4290a1bd64596c9f6}\label{class_analysis_adad6ec5ccbb99cc4290a1bd64596c9f6}} 
+\index{Analysis@{Analysis}!runIDFT@{runIDFT}}
+\index{runIDFT@{runIDFT}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{runIDFT()}{runIDFT()}}
+{\footnotesize\ttfamily void Analysis\+::run\+I\+D\+FT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Perform I\+D\+FT on each frame \mbox{\Hypertarget{class_analysis_a6c2598df868425a77b3547902a251efa}\label{class_analysis_a6c2598df868425a77b3547902a251efa}} 
+\index{Analysis@{Analysis}!setnFFT@{setnFFT}}
+\index{setnFFT@{setnFFT}!Analysis@{Analysis}}
+\doxysubsubsection{\texorpdfstring{setnFFT()}{setnFFT()}}
+{\footnotesize\ttfamily int Analysis\+::setn\+F\+FT (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Set the value of n\+F\+FT
+
+Calculate n\+F\+FT given frame length 
+\begin{DoxyParams}{Parameters}
+{\em n} & frame length \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+n\+F\+FT 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_analysis_8h}{Analysis.\+h}}\item 
+Analysis.\+cpp\end{DoxyCompactItemize}

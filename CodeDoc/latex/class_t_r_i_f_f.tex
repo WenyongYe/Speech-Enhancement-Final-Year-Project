@@ -1,0 +1,66 @@
+\hypertarget{class_t_r_i_f_f}{}\doxysection{T\+R\+I\+FF Class Reference}
+\label{class_t_r_i_f_f}\index{TRIFF@{TRIFF}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_ac667a5f3131648c12c8e35523984767f}\label{class_t_r_i_f_f_ac667a5f3131648c12c8e35523984767f}} 
+bool {\bfseries Read} (ifstream $\ast$inf)
+\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_ab8f31a174a7641e5acc9783238580e93}\label{class_t_r_i_f_f_ab8f31a174a7641e5acc9783238580e93}} 
+void {\bfseries Write} (ofstream $\ast$of)
+\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_a8fa7c89e8b4e0a78649e139d38520089}\label{class_t_r_i_f_f_a8fa7c89e8b4e0a78649e139d38520089}} 
+void {\bfseries Compose} (unsigned int n\+Samples, int rate, int bytes\+\_\+per\+\_\+samp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_a620ba3af1530084332c484b4a568c792}\label{class_t_r_i_f_f_a620ba3af1530084332c484b4a568c792}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>char {\bfseries ID} \mbox{[}4\mbox{]}\\
+\>int {\bfseries Len}\\
+\} {\bfseries Riff\_Hdr}\\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_ad8a36e038ebecec8c26b9b4665736335}\label{class_t_r_i_f_f_ad8a36e038ebecec8c26b9b4665736335}} 
+char {\bfseries Wave\+\_\+\+ID} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_a33cb109e0f7f7f4bff528a93a18d6e64}\label{class_t_r_i_f_f_a33cb109e0f7f7f4bff528a93a18d6e64}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>char {\bfseries ID} \mbox{[}4\mbox{]}\\
+\>unsigned int {\bfseries Len}\\
+\} {\bfseries Format\_Hdr}\\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_a9045258440e3e11dff4ac1a07be0df44}\label{class_t_r_i_f_f_a9045258440e3e11dff4ac1a07be0df44}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>short int {\bfseries FormatTag}\\
+\>short int {\bfseries Channels}\\
+\>int {\bfseries Rate}\\
+\>int {\bfseries BytesPerSec}\\
+\>short int {\bfseries BytesPerSam}\\
+\>short int {\bfseries BitsPerSam}\\
+\} {\bfseries Fmt\_Chunk}\\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{class_t_r_i_f_f_a4d64b11dfd5453921af8f1e871fc72d7}\label{class_t_r_i_f_f_a4d64b11dfd5453921af8f1e871fc72d7}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>char {\bfseries ID} \mbox{[}4\mbox{]}\\
+\>unsigned int {\bfseries Len}\\
+\} {\bfseries Data\_Hdr}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+R\+I\+F\+F.\+h\item 
+R\+I\+F\+F.\+cpp\end{DoxyCompactItemize}

@@ -13,9 +13,21 @@
 #include "IO.h"
 #include "Simulation.h"
 #include "Evaluation.h"
+#include "Enhancement.h"
+#include "CheckData.h"
 
+
+/// \brief Operations from menu
+///
+/// Perform operations selected from the menu in main.cpp
 class RunMenu {
-public:
+public  :
+
+    RunMenu();              ///< constructor
+    ~RunMenu();             ///< destructor
+
+    CheckData *checkData;   ///< CheckData class
+    IO *io;                 ///< IO class
 
     /// Test IO function
     ///
@@ -45,13 +57,16 @@ public:
     /// for speech enhancement
     void spectralSubtract();
 
-    /// Spectral subtraction
+    /// Wiener filter
     ///
-    /// Apply recursive noise estimation and perform spectral subtraction
-    /// for speech enhancement
-    void wiener();
+    /// Apply Wiener filter for speech enhancement
+    void wienerFilter();
 
+    /// Evaluation
+    ///
+    /// Segmental SNR implemented for objective quality measures
     void evaluation();
+
 };
 
 

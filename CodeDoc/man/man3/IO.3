@@ -1,0 +1,80 @@
+.TH "IO" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IO \- \fBIO\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IO\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIO\fP ()"
+.br
+.RI "constructor "
+.ti -1c
+.RI "\fB~IO\fP ()"
+.br
+.RI "destructor "
+.ti -1c
+.RI "void \fBInput\fP ()"
+.br
+.ti -1c
+.RI "void \fBOutput\fP ()"
+.br
+.ti -1c
+.RI "void \fBReplaceWave\fP (\fBTWAVData\fP *&\fBtwavData\fP, float *&wave, int newLength)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTWAVData\fP * \fBtwavData\fP"
+.br
+.RI "WAV data\&. "
+.ti -1c
+.RI "char * \fBoutput\fP"
+.br
+.RI "output file name "
+.ti -1c
+.RI "char * \fBinput\fP"
+.br
+.RI "input file name "
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBIO\fP\&. 
+
+\fBIO\fP functions, used in each operation 
+.SH "Member Function Documentation"
+.PP 
+.SS "void IO::Input ()"
+Input function
+.PP
+Input WAV file and load the data given file name\&. 
+.SS "void IO::Output ()"
+Output function
+.PP
+Output WAV file and write the data given file name\&. 
+.SS "void IO::ReplaceWave (\fBTWAVData\fP *& twavData, float *& wave, int newLength)"
+Replace WAV file
+.PP
+If applicable, replace all samples of original WAV file with new samples\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItwavData\fP Original WAV file 
+.br
+\fIwave\fP WAV file after replacement 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

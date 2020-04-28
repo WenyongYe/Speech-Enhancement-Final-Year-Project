@@ -16,7 +16,12 @@
 #include "WAVData.h"
 #include <math.h>
 #include "IO.h"
+#include "RunMenu.h"
 
+
+/// \brief Noise simulation
+///
+/// Used in the RunMenu for generating noise
 class Simulation {
 
 public:
@@ -24,8 +29,8 @@ public:
     float SNR;           ///< SNR value
     float pNoise;        ///< power of noise
     float pSignal;       ///< power of signal
-    float pSignal1;      ///< power of noise (Sample 1)
-    float pSignal2;      ///< power of noise (Sample 2)
+    float pSignalNoise;      ///< power of noise (Sample 1)
+    float pSignalClean;      ///< power of clean speech (Sample 2)
     float sum;           ///< sum value
     float noiseNewStd;   ///< new std of noise
     float noiseOldStd;   ///< old std of noise
@@ -49,9 +54,9 @@ public:
     /// \return Gaussian distribution random number
     float box_muller(float sigma);
 
-    /// Add Gaussian white noise to speech
+    /// Add white Gaussian noise to speech
     ///
-    /// Generate Gaussian white noise and add it to given speech,
+    /// Generate white Gaussian noise and add it to given speech,
     /// according to specific SNR
     /// \param twavData WAV data
     void addGaussianNoise(TWAVData *twavData);

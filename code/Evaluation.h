@@ -1,3 +1,10 @@
+/*!
+* \file Evaluation.h
+* \brief Objective evaluation
+*
+* Segmental SNR used for objective quality measures
+*
+*/
 #ifndef CSC3002_EVALUATION_H
 #define CSC3002_EVALUATION_H
 #include <iostream>
@@ -5,10 +12,20 @@
 #include "Analysis.h"
 #include <math.h>
 
+
+/// \brief Objective evaluation
+///
+/// Used in the RunMenu
 class Evaluation {
 
 public:
-    float segmentalSNR(TWAVData *twavData1, TWAVData *twavData2,int i);
+    /// Inverse Discrete Fourier Transform
+    ///
+    /// \param original original signal
+    /// \param enhanced enhanced signal
+    /// \param i sampling period
+    /// \return segmental SNR result
+    float segmentalSNR(TWAVData *original, TWAVData *enhanced,int i);
 };
 
 

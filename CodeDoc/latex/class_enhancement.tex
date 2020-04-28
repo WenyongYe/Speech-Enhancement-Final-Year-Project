@@ -1,0 +1,119 @@
+\hypertarget{class_enhancement}{}\doxysection{Enhancement Class Reference}
+\label{class_enhancement}\index{Enhancement@{Enhancement}}
+
+
+Speech enhancement.  
+
+
+
+
+{\ttfamily \#include $<$Enhancement.\+h$>$}
+
+Inheritance diagram for Enhancement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enhancement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_enhancement_a7e1020afa00695c339aed44896042792}{noise\+Estimation}} (int z, int \mbox{\hyperlink{class_analysis_a668fb53a056f1b302df00461fff9b3f7}{x}})
+\item 
+void \mbox{\hyperlink{class_enhancement_a3ca477591ec3fb331db030040c0787f2}{recursive\+Noise\+Estimation}} (float a)
+\item 
+void \mbox{\hyperlink{class_enhancement_af6bd76f367edff580232891a4e6b991a}{spectral\+Subtraction}} ()
+\item 
+void \mbox{\hyperlink{class_enhancement_ae52138bac197e0df0d7fd10830779e57}{wiener\+Filter}} (float alpha, float beta)
+\item 
+void \mbox{\hyperlink{class_enhancement_a30966368fb168b23027f45a3b86c31ea}{run\+Wiener}} ()
+\item 
+void \mbox{\hyperlink{class_enhancement_af5b9c62808a87a87fefc09e87223b438}{run\+Wiener}} (float alpha, float beta)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Speech enhancement. 
+
+Derived class from \mbox{\hyperlink{class_analysis}{Analysis}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enhancement_a7e1020afa00695c339aed44896042792}\label{class_enhancement_a7e1020afa00695c339aed44896042792}} 
+\index{Enhancement@{Enhancement}!noiseEstimation@{noiseEstimation}}
+\index{noiseEstimation@{noiseEstimation}!Enhancement@{Enhancement}}
+\doxysubsubsection{\texorpdfstring{noiseEstimation()}{noiseEstimation()}}
+{\footnotesize\ttfamily void Enhancement\+::noise\+Estimation (\begin{DoxyParamCaption}\item[{int}]{z,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+Noise estimation
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & the number of frames used in head \\
+\hline
+{\em x} & the number of frames used in tail \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enhancement_a3ca477591ec3fb331db030040c0787f2}\label{class_enhancement_a3ca477591ec3fb331db030040c0787f2}} 
+\index{Enhancement@{Enhancement}!recursiveNoiseEstimation@{recursiveNoiseEstimation}}
+\index{recursiveNoiseEstimation@{recursiveNoiseEstimation}!Enhancement@{Enhancement}}
+\doxysubsubsection{\texorpdfstring{recursiveNoiseEstimation()}{recursiveNoiseEstimation()}}
+{\footnotesize\ttfamily void Enhancement\+::recursive\+Noise\+Estimation (\begin{DoxyParamCaption}\item[{float}]{a }\end{DoxyParamCaption})}
+
+Recursive noise estimation
+
+Used together with the \mbox{\hyperlink{class_enhancement_af6bd76f367edff580232891a4e6b991a}{spectral\+Subtraction()}} 
+\begin{DoxyParams}{Parameters}
+{\em a} & the smoothing factor used for recursive noise estimation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enhancement_a30966368fb168b23027f45a3b86c31ea}\label{class_enhancement_a30966368fb168b23027f45a3b86c31ea}} 
+\index{Enhancement@{Enhancement}!runWiener@{runWiener}}
+\index{runWiener@{runWiener}!Enhancement@{Enhancement}}
+\doxysubsubsection{\texorpdfstring{runWiener()}{runWiener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Enhancement\+::run\+Wiener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Perform Wiener filter with default parameters \mbox{\Hypertarget{class_enhancement_af5b9c62808a87a87fefc09e87223b438}\label{class_enhancement_af5b9c62808a87a87fefc09e87223b438}} 
+\index{Enhancement@{Enhancement}!runWiener@{runWiener}}
+\index{runWiener@{runWiener}!Enhancement@{Enhancement}}
+\doxysubsubsection{\texorpdfstring{runWiener()}{runWiener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Enhancement\+::run\+Wiener (\begin{DoxyParamCaption}\item[{float}]{alpha,  }\item[{float}]{beta }\end{DoxyParamCaption})}
+
+Perform Wiener filter with input parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & smoothing factor alpha \\
+\hline
+{\em beta} & smoothing factor beta \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_enhancement_af6bd76f367edff580232891a4e6b991a}\label{class_enhancement_af6bd76f367edff580232891a4e6b991a}} 
+\index{Enhancement@{Enhancement}!spectralSubtraction@{spectralSubtraction}}
+\index{spectralSubtraction@{spectralSubtraction}!Enhancement@{Enhancement}}
+\doxysubsubsection{\texorpdfstring{spectralSubtraction()}{spectralSubtraction()}}
+{\footnotesize\ttfamily void Enhancement\+::spectral\+Subtraction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Spectral subtraction
+
+Subtract power spectrum of speech signal and estimated noise \mbox{\Hypertarget{class_enhancement_ae52138bac197e0df0d7fd10830779e57}\label{class_enhancement_ae52138bac197e0df0d7fd10830779e57}} 
+\index{Enhancement@{Enhancement}!wienerFilter@{wienerFilter}}
+\index{wienerFilter@{wienerFilter}!Enhancement@{Enhancement}}
+\doxysubsubsection{\texorpdfstring{wienerFilter()}{wienerFilter()}}
+{\footnotesize\ttfamily void Enhancement\+::wiener\+Filter (\begin{DoxyParamCaption}\item[{float}]{alpha,  }\item[{float}]{beta }\end{DoxyParamCaption})}
+
+Wiener filter
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & smoothing factor alpha \\
+\hline
+{\em beta} & smoothing factor beta \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enhancement_8h}{Enhancement.\+h}}\item 
+Enhancement.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+.TH "Simulation" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Simulation \- Noise simulation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Simulation\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinputSNR\fP ()"
+.br
+.ti -1c
+.RI "float \fBbox_muller\fP (float \fBsigma\fP)"
+.br
+.ti -1c
+.RI "void \fBaddGaussianNoise\fP (\fBTWAVData\fP *twavData)"
+.br
+.ti -1c
+.RI "void \fBaddNoise\fP (\fBTWAVData\fP *twavData1, \fBTWAVData\fP *twavData2)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBSNR\fP"
+.br
+.RI "SNR value\&. "
+.ti -1c
+.RI "float \fBpNoise\fP"
+.br
+.RI "power of noise "
+.ti -1c
+.RI "float \fBpSignal\fP"
+.br
+.RI "power of signal "
+.ti -1c
+.RI "float \fBpSignalNoise\fP"
+.br
+.RI "power of noise (Sample 1) "
+.ti -1c
+.RI "float \fBpSignalClean\fP"
+.br
+.RI "power of clean speech (Sample 2) "
+.ti -1c
+.RI "float \fBsum\fP"
+.br
+.RI "sum value "
+.ti -1c
+.RI "float \fBnoiseNewStd\fP"
+.br
+.RI "new std of noise "
+.ti -1c
+.RI "float \fBnoiseOldStd\fP"
+.br
+.RI "old std of noise "
+.ti -1c
+.RI "float \fBdelta\fP"
+.br
+.RI "delta "
+.ti -1c
+.RI "float \fBsigma\fP"
+.br
+.RI "sigma "
+.ti -1c
+.RI "float * \fBwhiteNoise\fP"
+.br
+.RI "Gaussian white noise\&. "
+.ti -1c
+.RI "float * \fBnoise\fP"
+.br
+.RI "noisy recording "
+.ti -1c
+.RI "float \fBPI\fP = 3\&.1416"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Noise simulation\&. 
+
+Used in the \fBRunMenu\fP for generating noise 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Simulation::addGaussianNoise (\fBTWAVData\fP * twavData)"
+Add white Gaussian noise to speech
+.PP
+Generate white Gaussian noise and add it to given speech, according to specific SNR 
+.PP
+\fBParameters\fP
+.RS 4
+\fItwavData\fP WAV data 
+.RE
+.PP
+
+.SS "void Simulation::addNoise (\fBTWAVData\fP * twavData1, \fBTWAVData\fP * twavData2)"
+Add noisy file to speech
+.PP
+Given noisy speech and clean speech, add noise to clean speech according to specific SNR 
+.PP
+\fBParameters\fP
+.RS 4
+\fItwavData1\fP WAV data 1 (Noisy speech) 
+.br
+\fItwavData2\fP WAV data 2 (Clean speech) 
+.RE
+.PP
+
+.SS "float Simulation::box_muller (float sigma)"
+Box-Muller Transform
+.PP
+Box-Muller transform to perform Gaussian distribution\&. Convert uniform distribution to Gaussian distribution\&. Used for generating random number for Gaussian white noise\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsigma\fP standard deviation 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Gaussian distribution random number 
+.RE
+.PP
+
+.SS "void Simulation::inputSNR ()"
+Input value of SNR 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

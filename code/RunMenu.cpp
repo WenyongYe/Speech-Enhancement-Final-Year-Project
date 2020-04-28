@@ -1,209 +1,249 @@
 #include "RunMenu.h"
 
-void RunMenu::testIO(){
-
-    cout<<endl<<"----- IO test running -----"<<endl;
-
-    IO io;
-    io.Input();
-    io.Output();
+//constructor
+RunMenu::RunMenu(){
+    checkData=new CheckData;
+    io=new IO;
 }
 
-void RunMenu::testIDFT(){
+//destructor
+RunMenu::~RunMenu(){
 
-    cout<<endl<<"----- DFT and IDFT running -----"<<endl;
+}
 
-    IO io1;
-    io1.Input();
 
+//test IO
+void RunMenu::testIO() {
+
+    cout << endl << "----- IO test running -----" << endl;
+
+    io->Input();
+    io->Output();
+
+}
+
+//test IDFT
+void RunMenu::testIDFT() {
+
+    string in;
     int sam_period;
-    cout<<"Input sampling period (e.g. 20 ms) : ";
-    cin>>sam_period;
+
+    cout << endl << "----- DFT and IDFT running -----" << endl;
+
+    io->Input();
+
+    sam_period=checkData->getSampPeriod(in);
 
     Analysis analysis(sam_period);
 
-    analysis.frameLen(io1.twavData);
+    analysis.frameLen(io->twavData);
 
     analysis.initArray();
 
-    analysis.runAnalysis(io1.twavData);
+    analysis.runAnalysis(io->twavData);
 
     analysis.runIDFT();
 
     analysis.halfAdd();
 
-    io1.ReplaceWave(io1.twavData,analysis.newWave);
-    io1.Output();
+    //replace the original signal
+    io->ReplaceWave(io->twavData, analysis.newWave, analysis.newWaveLen);
 
+    io->Output();
 
 }
 
-void RunMenu::addNoise2Speech(){
-    cout<<endl<<"----- Add noise to clean speech running -----"<<endl;
+//add noise to clean speech given SNR
+void RunMenu::addNoise2Speech() {
+    cout << endl << "----- Add noise to clean speech running -----" << endl;
 
+    //io1 for clean speech, io2 for noise
     IO io1;
     IO io2;
 
-    cout<<endl<<"Input the name of NOISY speech WAV file"<<endl;
+    cout << endl << "Input the name of NOISY speech WAV file" << endl;
     io2.Input();
-    cout<<endl<<"Input the name of CLEAN speech WAV file"<<endl;
+    cout << endl << "Input the name of CLEAN speech WAV file" << endl;
     io1.Input();
 
     Simulation s;
     s.inputSNR();
 
-    s.addNoise(io1.twavData,io2.twavData);
+    s.addNoise(io1.twavData, io2.twavData);
     io1.Output();
 
 }
 
-void RunMenu::addGaussianNoise2Speech(){
 
-    cout<<endl<<"----- Gaussian white running -----"<<endl;
+//add white Gaussian noise
+void RunMenu::addGaussianNoise2Speech() {
 
-    IO io1;
+    cout << endl << "----- White Gaussian noise running -----" << endl;
 
-    io1.Input();
+    io->Input();
 
     Simulation s;
     s.inputSNR();
 
-    s.addGaussianNoise(io1.twavData);
+    s.addGaussianNoise(io->twavData);
 
-    io1.Output();
+    io->Output();
 }
 
+//spectral subtraction
 void RunMenu::spectralSubtract() {
 
-    cout<<endl<<"----- Spectral subtraction running -----"<<endl;
-
-    IO io1;
-    io1.Input();
-
-    int sam_period;
     float smoothing_factor;
-    cout << "Input sampling period (e.g. 20 ms) : ";
-    cin >> sam_period;
+    string in;
+    int sam_period;
 
+    cout << endl << "----- Spectral subtraction running -----" << endl;
+
+    io->Input();
+
+    //input sampling period
+    sam_period=checkData->getSampPeriod(in);
+
+    //input smoothing factor
     do {
         cout << endl << "Input smoothing factor for recursive noise estimation (between 0~1): ";
         cin >> smoothing_factor;
+
+        checkData->checkInputValueType(smoothing_factor);
+
+        //check validation of smoothing factor
         if (smoothing_factor <= 0 || smoothing_factor >= 1)
             cout << endl << "Incorrect value. Please input again";
 
     } while (smoothing_factor <= 0 || smoothing_factor >= 1);
 
+    //spectral analysis
+    Enhancement analysis(sam_period);
 
-    Analysis analysis(sam_period);
-
-    analysis.frameLen(io1.twavData);
+    analysis.frameLen(io->twavData);
 
     analysis.initArray();
 
-    analysis.runAnalysis(io1.twavData);
+    analysis.runAnalysis(io->twavData);
 
     analysis.recursiveNoiseEstimation(smoothing_factor);
 
-    analysis.spectrualSubtraction();
+    analysis.spectralSubtraction();
 
     analysis.runIDFT();
 
     analysis.halfAdd();
 
-    io1.ReplaceWave(io1.twavData,analysis.newWave);
+    //replace original signal
+    io->ReplaceWave(io->twavData, analysis.newWave, analysis.newWaveLen);
 
-    io1.Output();
+    io->Output();
 
 }
 
-void RunMenu::wiener() {
+//wiener filter
+void RunMenu::wienerFilter() {
 
-    cout << endl << "----- Wiener filter running -----" << endl;
-
-    IO io1;
-    io1.Input();
-
-    int sam_period;
     int select;
     float alpha, beta;
     bool flag;
+    string in;
+    int sam_period;
 
-    cout << "Input sampling period (e.g. 20 ms) : ";
-    cin >> sam_period;
+    cout << endl << "----- Wiener filter running -----" << endl;
 
-    do{
+    io->Input();
+
+    //input sampling period
+    sam_period=checkData->getSampPeriod(in);
+
+    do {
         cout << endl << "Choose number to select operations" << endl;
         cout << "1. Wiener filter with default setting" << endl <<
-         "2. Wiener filter with input parameters" << endl;
+             "2. Wiener filter with input parameters" << endl;
         cout << endl << "Input operation number: ";
 
         cin >> select;
-        switch (select){
+
+        //input selections
+        checkData->checkInputValueType(select);
+
+        switch (select) {
             case 1:
-                flag=true;
+                flag = true;
                 break;
             case 2:
                 do {
-                    cout << endl << "Input smoothing factor alpha and beta (between 0~1) "<<endl;
-                    cout<<"alpha :";
+                    cout << endl << "Input smoothing factor alpha and beta (between 0~1) " << endl;
+                    cout << "alpha (smoothing factor for estimated noise psd):";
                     cin >> alpha;
-                    cout<<endl<<"beta :";
-                    cin>>beta;
-                    if (alpha <= 0 || alpha >= 1||beta <= 0 || beta >= 1)
-                        cout << endl << "Incorrect value. Please input again"<<endl;
 
-                } while (alpha <= 0 || alpha >= 1||beta <= 0 || beta >= 1);
-                flag=false;
+                    checkData->checkInputValueType(alpha);
+
+                    cout << endl << "beta (smoothing factor fot priori SNR):";
+                    cin >> beta;
+
+                    checkData->checkInputValueType(beta);
+
+                    if (alpha <= 0 || alpha >= 1 || beta <= 0 || beta >= 1)
+                        cout << endl << "Incorrect value. Please input again" << endl;
+
+                } while (alpha <= 0 || alpha >= 1 || beta <= 0 || beta >= 1);
+                flag = false;
                 break;
             default:
-                cout<<"Incorrect value. Please input again "<<endl;
+                cout << "Incorrect value. Please input again " << endl;
         }
 
-    }while(select!=1&&select!=2);
+    } while (select != 1 && select != 2);
 
 
 
-    Analysis analysis(sam_period);
+    Enhancement analysis(sam_period);
 
-    analysis.frameLen(io1.twavData);
+    analysis.frameLen(io->twavData);
 
     analysis.initArray();
 
-    analysis.runAnalysis(io1.twavData);
+    analysis.runAnalysis(io->twavData);
 
-    if(flag)
+    if (flag)
         analysis.runWiener();
     else
-        analysis.runWiener(alpha,beta);
+        analysis.runWiener(alpha, beta);
 
     analysis.runIDFT();
 
     analysis.halfAdd();
 
-    io1.ReplaceWave(io1.twavData,analysis.newWave);
+    io->ReplaceWave(io->twavData, analysis.newWave, analysis.newWaveLen);
 
-    io1.Output();
+    io->Output();
 }
 
+//evaluation
 void RunMenu::evaluation() {
 
-    cout<<endl<<"----- Segmental SNR evaluation running -----"<<endl;
+    cout << endl << "----- Segmental SNR evaluation running -----" << endl;
 
     IO io1;
     IO io2;
 
-    cout<<endl<<"Input the name of original speech WAV file"<<endl;
+    cout << endl << "Input the name of original speech WAV file" << endl;
     io1.Input();
-    cout<<endl<<"Input the name of enhanced speech WAV file"<<endl;
+    cout << endl << "Input the name of enhanced speech WAV file" << endl;
     io2.Input();
 
+    string in;
     int sam_period;
-    cout << "Input sampling period (e.g. 20 ms) : ";
-    cin >> sam_period;
+
+    //input samling period
+    sam_period=checkData->getSampPeriod(in);
 
 
     Evaluation e;
-    float result=e.segmentalSNR(io1.twavData,io2.twavData,sam_period);
+    float result = e.segmentalSNR(io1.twavData, io2.twavData, sam_period);
 
-    cout<<endl<<"Segmental SNR is : "<<result<<endl;
+    cout << endl << "Segmental SNR is : " << result << endl;
 }
+

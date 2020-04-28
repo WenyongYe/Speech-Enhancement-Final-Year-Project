@@ -1,0 +1,82 @@
+.TH "CheckData" 3 "Fri Apr 24 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CheckData \- Check input value\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CheckData\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcheckInputValueType\fP (float &i)"
+.br
+.ti -1c
+.RI "void \fBcheckInputValueType\fP (int &i)"
+.br
+.ti -1c
+.RI "bool \fBisNumber\fP (string s)"
+.br
+.ti -1c
+.RI "int \fBgetSampPeriod\fP (string in)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Check input value\&. 
+
+Used in the \fBRunMenu\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "void CheckData::checkInputValueType (float & i)"
+Check input value
+.PP
+Check the input value if it is correct, if not, input again 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP Check float number as input value 
+.RE
+.PP
+
+.SS "void CheckData::checkInputValueType (int & i)"
+Check input value
+.PP
+Check the input value if it is correct, if not, input again 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi\fP Check int number as input value 
+.RE
+.PP
+
+.SS "int CheckData::getSampPeriod (string in)"
+Input sampling period
+.PP
+Get sampling period and check if it is valid 
+.PP
+\fBParameters\fP
+.RS 4
+\fIin\fP string to be checked 
+.RE
+.PP
+
+.SS "bool CheckData::isNumber (string s)"
+Check if the input string is number
+.PP
+Check if the components in the string are all digit numbers 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP string to be checked 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.
